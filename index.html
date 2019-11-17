@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/media.css">
+    <script src="resources/js/progressAndRound.js"></script>
+    <script src="resources/js/jquery-1.7.2.min.js"></script>
+    <script src="resources/js/jquery.ba-throttle-debounce.js"></script>
+    <script src="resources/js/raphael.js"></script>
+    <script src="resources/js/jquery.form.min.js"></script>
+    <script src="resources/js/modernizr-1.7.min.js"></script>
+    <script src="resources/js/moment.js"></script>
+    <script src="resources/js/functions.js"></script>
+    <script src="resources/js/video.js"></script>
+    <script src="resources/js/jquery-ui-1.8.11.js"></script>
+    <script src="resources/js/highlighter.js"></script>
+    <script src="resources/js/stake.js"></script>
+    <script src="resources/js/json2.js"></script>
+    <script src="resources/js/jquery.signalR-0.5.0.min.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid page">
+
+    <div class="row bottom-colonka ">
+        <div class="col col-lg-2 col-3 col-sm-3 ">
+            <div class="round">
+                <div class="round-number">22670</div>
+            </div>
+        </div>
+        <div class="col col-lg-10 col-9 col-sm-9">
+            <div class=" row check-summ d-flex">
+                <div class="sum col-lg-11 col-md-10 col-sm-10 col-10 col-xl-8">Сумма : <input type="text" id="check-sum" name="check-sum" value="0" readonly="readonly"></div>
+
+                <div class="col-lg-1 col-md-2 col-sm-2 col-2 col-xl-4 buttons">
+                    <div class="hamburger-btn" id="mobile-menu"></div>
+                    <div class="btn-block dasavorel" id="btn-block">
+                        <button type="button" class="btn btn-secondary admin-button" value="Undo" id="undo-button">Undo</button>
+                        <button type="button" class="btn btn-secondary admin-button" value="Удалить фишку" id="cancel-any-button">Удалить фишку</button>
+                        <button type="button" class="btn btn-secondary admin-button" value="Удалить все" id="cancel-button" c>Удалить все</button>
+                        <button type="button" class="btn btn-secondary admin-button" value="Ставить " id="submit-button" >Ставить</button>
+                    </div>
+                    <div style="float:right; padding-right:50px;">
+                        <div id="round-time" style="display: none">0</div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row balance-login buttons1" id="separator">
+
+        <div class="col-lg-8 buttons1">
+            <div class="hamburger-btn1" id="mobile-menu1"></div>
+            <duv class="btn-block1 dasavorel1 limits" id="buttons">
+                <div> Balance : 40250</div>
+                <div> MinBetAmount : 100</div>
+                <div> MaxBetAmount : 2000</div>
+                <div> OneRoundTotalBet : 7000/7000</div>
+            </duv>
+        </div>
+        <div class="col-lg-4 login d-flex">
+            <div><a href="http://roulette.beticus.com/Home/Index">Stream</a></div>
+            <div><a href="http://roulette.beticus.com/Account/Logout">Log out</a></div>
+
+        </div>
+
+    </div>
+<div class="row" id="main">
+    <div id="logoutTimer" style="display: none;">
+        <div id="logoutTimer" style="display: none;">Сессия истекает через <p><strong>27:45</strong></p> минут</div>
+
+
+    </div>
+    <div class="col-lg chiper">
+    <div class="row">
+        <div class="col-lg-12 roulette-chips stake-chips d-flex ">
+            <div class="chip selected" data-value="100">
+                <img src="resources/img/purple-chip.png" alt="100">
+                <div class="text">100</div>
+            </div>
+            <div class="chip" data-value="250">
+                <img src="resources/img/blue-chip.png" alt="250">
+                <div class="text">250</div>
+            </div>
+            <div class="chip" data-value="500">
+                <img src="resources/img/orange-chip.png" alt="500">
+                <div class="text">500</div>
+            </div>
+            <div class="chip" data-value="1000">
+                <img src="resources/img/red-chip.png" alt="1000">
+                <div class="text">1000</div>
+            </div>
+            <div class="chip" data-value="3000">
+                <img src="resources/img/yellow-chip.png" alt="3000">
+                <div class="text">3000</div>
+            </div>
+            <div class="chip" data-value="5000">
+                <img src="resources/img/dark-chip.png" alt="5000">
+                <div class="text">5000</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="board-container" id="centered-div">
+        <div class="row row1 board">
+            <div class="col-zero reverse" id="zero">
+                <div class="push-item">
+                    <div class="zero-zero round">0</div>
+                </div>
+            </div>
+            <div class="col-board roulette-board">
+                <div class="row">
+                    <div class="red number col col-lg" id="td3">
+                            <div class="push-item" round="3">
+                                <div class="round">3</div>
+                            </div>
+                    </div>
+                    <div class="black number col col-lg" id="td6">
+                        <div class="push-item" round="6">
+                            <div class="round">6</div>
+                        </div>
+                    </div>
+                    <div class="red number col col-lg" id="td9">
+                        <div class="push-item" round="9">
+                            <div class="round">9</div>
+                        </div>
+                    </div>
+                    <div class="red number col col-lg" id="td12">
+                        <div class="push-item" round="12">
+                            <div class="round">12</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td15">
+                        <div class="push-item" round="15">
+                            <div class="round">15</div>
+                        </div>
+                    </div>
+                    <div class="red number col col-lg" id="td18">
+                        <div class="push-item" round="18">
+                            <div class="round">18</div>
+                        </div>
+                    </div>
+                    <div class="red number col col-lg" id="td21">
+                        <div class="push-item" round="21">
+                            <div class="round">21</div>
+                        </div>
+                    </div>
+                    <div class="black number col col-lg" id="td24">
+                        <div class="push-item" round="24">
+                            <div class="round">24</div>
+                        </div>
+                    </div>
+
+                    <div class="red number col col-lg" id="td27">
+                        <div class="push-item" round="27">
+                            <div class="round">27</div>
+                        </div>
+                    </div>
+                    <div class="red number col col-lg" id="td30">
+                        <div class="push-item" round="30">
+                            <div class="round">30</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td33">
+                        <div class="push-item" round="33">
+                            <div class="round">33</div>
+                        </div>
+                    </div>
+
+                    <div class="red number col col-lg" id="td36">
+                        <div class="push-item" round="36">
+                            <div class="round">36</div>
+                        </div>
+                     </div>
+                </div>
+                <div class="row">
+                    <div class="black number col col-lg"  id="td2">
+                        <div class="push-item" round="2">
+                            <div class="round">2</div>
+                        </div>
+                    </div>
+
+                    <div class="red number col col-lg" id="td5">
+                        <div class="push-item" round="5">
+                            <div class="round">5</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td8">
+                        <div class="push-item" round="8">
+                            <div class="round">8</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td11">
+                        <div class="push-item" round="11">
+                            <div class="round">11</div>
+                        </div>
+                    </div>
+
+                    <div class="red number col col-lg" id="td14">
+                        <div class="push-item" round="14">
+                            <div class="round">14</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td17">
+                        <div class="push-item" round="17">
+                            <div class="round">17</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td20">
+                        <div class="push-item" round="20">
+                            <div class="round">20</div>
+                        </div>
+                    </div>
+
+                    <div class="red number col col-lg" id="td23">
+                        <div class="push-item" round="23">
+                            <div class="round">23</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td26">
+                        <div class="push-item" round="26">
+                            <div class="round">26</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td29">
+                        <div class="push-item" round="29">
+                            <div class="round">29</div>
+                        </div>
+                    </div>
+
+                    <div class="red number col col-lg" id="td32">
+                        <div class="push-item" round="32">
+                            <div class="round">32</div>
+                        </div>
+                    </div>
+
+
+                    <div class="black number col col-lg" id="td35">
+                        <div class="push-item" round="35">
+                            <div class="round">35</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="red number col col-lg" id="td1">
+                        <div class="push-item" round="1">
+                            <div class="round">1</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td4">
+                            <div class="push-item" round="4">
+                                <div class="round">4</div>
+                            </div>
+                        </div>
+
+                    <div class="red number col col-lg" id="td7">
+                        <div class="push-item" round="7">
+                            <div class="round">7</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td10">
+                        <div class="push-item" round="10">
+                            <div class="round">10</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td13">
+                        <div class="push-item" round="13">
+                            <div class="round">13</div>
+                        </div>
+                    </div>
+
+                    <div class="red number col col-lg" id="td16">
+                        <div class="push-item" round="16">
+                            <div class="round">16</div>
+                        </div>
+                    </div>
+
+                    <div class="red number col col-lg" id="td19">
+                        <div class="push-item" round="19">
+                            <div class="round">19</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td22">
+                        <div class="push-item" round="22">
+                            <div class="round">22</div>
+                        </div>
+                    </div>
+
+                    <div class="red number col col-lg" id="td25">
+                        <div class="push-item" round="25">
+                            <div class="round">25</div>
+                        </div>
+                    </div>
+
+                    <div class="black number col col-lg" id="td28">
+                        <div class="push-item" round="28">
+                            <div class="round">28</div>
+                        </div>
+                    </div>
+
+
+                    <div class="black number col col-lg" id="td31">
+                        <div class="push-item" round="31">
+                            <div class="round">31</div>
+                        </div>
+                    </div>
+
+
+                    <div class="red number col col-lg" id="td34">
+                        <div class="push-item" round="34">
+                            <div class="round">34</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-inchvorban col-lg-1">
+                <div class="row rowPorc">
+                    <div> <div class="col-lg push-item"><div class="row12">2to1</div></div></div>
+                </div>
+                <div class="row rowPorc">
+                    <div> <div class="col-lg push-item"><div class="row12">2to1</div></div></div>
+                </div>
+                <div class="row rowPorc">
+                    <div> <div class="col-lg push-item"><div class="row12">2to1</div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-stavkeqi-tesakner">
+            <div class="col-lg-12">
+                <div class="row row-stner">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-4 col-xl-4 esim"><div class="push-item" round="1st12">1st 12</div> </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-4 col-xl-4 esim"><div class="push-item" round="2nd12">2nd 12</div></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-4 col-xl-4 esim"><div class="push-item" round="3rd12">3rd 12</div></div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="row row-stner">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 esim" ><div class="push-item" round="1to18">1 to 18</div></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 esim" ><div class="push-item" round="Even">EVEN</div></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 img img1 esim" ><div class="push-item" round="imgB"></div></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 img img2 esim"><div class="push-item" round="imgR"></div></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 esim"><div class="push-item" round="Odd">Odd</div></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 esim"><div class="push-item" round="19to36">19 to 36</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    var resizeTm = null;
+    $(window).resize(function(){
+        clearTimeout(resizeTm);
+        resizeTm = setTimeout(function(){recalcualteChipPositions()}, 200);
+    });
+
+    $(document).ready(function(){
+
+        $('#undo-button').on('click', function(){
+            undoLastChip();
+        });
+
+        $("#cancel-any-button").click(function() {
+            if ($(this).hasClass("clicked")) {
+                $(this).removeClass("clicked");
+                $(".push-item").css("cursor", "pointer");
+                $("div.round").css("cursor", "pointer");
+                if ($("#complect-button").hasClass("clicked")) {
+                    $(".push-item").css("cursor", "move");
+                    $("div.round").css("cursor", "move");
+                    $("#centered-div .chip").css("cursor", "move");
+                }
+            } else {
+                $(this).addClass("clicked");
+                $(".push-item").css("cursor", "url('resources/img/delete-cursor.png') 12 12,pointer");
+                $("div.round").css("cursor", "url('resources/img/delete-cursor.png') 12 12,pointer");
+                $("#centered-div .chip").css("cursor", "url('resources/img/delete-cursor.png') 12 12,pointer");
+            }
+        });
+
+
+
+        $("#cancel-button").click(function() {
+            checkSum.val("0");
+            $.ajax({
+                type: "POST",
+                url: 'http://roulette.beticus.com/Stake/RememberCurrentState',
+                json: true,
+                data: { currentState: "" },
+                success: function() {
+                    stakes = new Array();
+                    $('.roulette-board div.chip').remove();
+                    $('#zero div.chip').remove();
+                }
+            });
+        });
+
+
+
+
+        var tm = null;
+        $('#mobile-menu').click (function (e) {
+            clearTimeout(tm);
+            var obj = document.getElementById('btn-block');
+            obj.style.display = obj.style.display == 'block' ? 'none' : 'block';
+            tm = setTimeout(function () {
+                clearTimeout(tm);
+                document.getElementById('btn-block').style.display = 'none';
+            }, 3000);
+        });
+
+        $('#btn-block').click(function (e) {
+            if($(document).outerWidth() < 1199 ) {
+                clearTimeout(tm);
+                document.getElementById('btn-block').style.display = 'none';
+            }
+        });
+
+
+        var tm1 = null;
+        $('#mobile-menu1').click (function (e) {
+            clearTimeout(tm1);
+            var obj1 = document.getElementById('buttons');
+            obj1.style.display = obj1.style.display == 'block' ? 'none' : 'block';
+            tm11 = setTimeout(function () {
+                clearTimeout(tm1);
+                document.getElementById('buttons').style.display = 'none';
+            }, 3000);
+        });
+
+        $('#buttons').click(function (e) {
+            if($(document).outerWidth() < 1199 ) {
+                clearTimeout(tm1);
+                document.getElementById('buttons').style.display = 'none';
+            }
+
+        });
+
+        var checkSum = $('#check-sum');
+    })
+
+</script>
+
+</body>
+</html>

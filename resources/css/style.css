@@ -1,0 +1,283 @@
+body {
+    background-color: #5c6267;
+}
+
+.bottom-colonka {
+    padding: 18px;
+}
+
+.rond {
+    background-color: #403e3e;
+    width: 150px;
+    height: 57px;
+    background-color: #403e3e;
+    border-radius: 20px;
+
+}
+
+.round-number {
+    text-align: center;
+    background: #393534;
+    height: 53px;
+    line-height: 47px;
+    width: 150px;
+    font-size: 38px;
+    border-radius: 20px;
+    color: White;
+    display: inline-block;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.check-summ {
+    font-size: large !important;
+    color: black !important;
+    padding: 12px;
+    font-weight: bold;
+}
+/*.check-summ > .sum{*/
+    /*margin: 5px 354px;*/
+    /*margin-left: -6px;*/
+/*}*/
+
+.check-summ .btn-secondary {
+    background-color: #cccccc !important;
+    color: black !important;
+}
+
+
+.balance-login {
+    background-color: #3e4346;
+    height: 30px;
+
+}
+
+.balance-login a {
+    color: inherit;
+    font-size: large;
+    margin: 4px 30px 0 0;
+    color: #fff;
+}
+
+.login {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-block1 {
+    display: flex;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+/*div.chip, div.chip img {*/
+    /*width: 65px;*/
+    /*height: 65px;*/
+/*}*/
+
+.chiper img {
+    width: 65px;
+    height: 65px;
+}
+
+
+.btn-block1 div {
+    margin-left: 30px;
+}
+.push-item .round{
+    margin: 12px auto;
+}
+
+div.chip .text {
+    position: absolute;
+    width: 33px;
+    top: 22px;
+    left: 15px;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    line-height: 23px;
+    font-weight: bold;
+}
+
+.selected {
+    opacity: 0.5;
+}
+
+div.chip {
+    cursor: pointer;
+    position: relative;
+}
+
+.roulette-chips {
+    position: relative;
+    justify-content: center;
+    padding: 29px;
+}
+
+.roulette-chips .chip {
+    margin-right: 15px;
+}
+
+.col-board > .row > div {
+    width: 91px;
+    height: 124px;
+    border: 1px solid #ffe399;
+}
+.highlighted {
+    color: yellow;
+    background-color: #3e3b3b !important;
+    box-shadow: 0px 0px 15px black inset;
+}
+
+
+.zero-zero {
+    line-height: 6.6em;
+}
+
+.col-zero {
+    font-size: 58px;
+    font-weight: bold;
+    font-family: "Trebuchet MS", "Verdana Pro", Verdana, Helvetica, Sans-Serif;
+    background: url("../img/krish.png") no-repeat top left;
+    background-size: contain;
+    width: 156px;height: 372px;
+    position: relative;
+}
+
+#zero.highlighted {
+    color: yellow;
+    background-image: url("../img/krish_hover.png");
+    background-color: transparent !important;
+    box-shadow: none;
+
+}
+
+
+
+
+.col-inchvorban .row > div {
+    height: 124px;
+    border: 1px solid #ffe399;
+    background-color: #757779;
+    box-shadow: 0px 0px 15px black inset;
+}
+
+.row1 {
+    margin: 0 0;
+}
+
+.board-container {
+    width: 71%;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+}
+.col-lg-1{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 30px!important;
+}
+
+.row-stavkeqi-tesakner  {
+    background-color: #757779;
+    font-weight: bold;
+    font-size: 35px;
+    width: 81.48%;
+    margin-left: 141px;
+}
+
+.row-stavkeqi-tesakner div {
+    height: 75px;
+    line-height: 56px;
+}
+
+
+.row-stner {
+    height: 75px;
+    line-height: 66px;
+}
+
+.row-stner .esim{
+    border: 1px solid #ffe399;
+    box-shadow: 0px 0px 15px black inset;
+}
+
+.row-stner .col-lg{
+    height: 75px;
+}
+
+.board-container .row .col {
+    box-shadow: 0px 0px 15px black inset;
+}
+.col-board {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 129px;
+    font-family: "Trebuchet MS", "Verdana Pro", Verdana, Helvetica, Sans-Serif;
+
+}
+
+
+.col-inchvorban {
+    font-size: 35px;
+    line-height: 129px;
+
+}
+
+.red {background-color: #ff0000;}
+.black {background-color: #000000;}
+
+
+
+
+
+.hamburger-btn {
+    display: block;
+    background: url("../img/hamburger-512.png") no-repeat top left;
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+}
+.hamburger-btn1 {
+    display: block;
+    background: url("../img/hamburger-512.png") no-repeat top left;
+    width: 48px;
+    height: 48px;
+    background-size: contain;
+}
+
+
+.btn-block .btn-secondary {clear: none;}
+.btn-block1 div {clear: none;}
+
+.img1 {
+    background-image: url("../img/round_black.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+
+}
+.img2 {
+    background-image: url("../img/round_red.png");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+}
+
+.sum  input {
+    background-color: transparent!important;
+    border: none !important;
+    width: 100px;
+    color: black !important;
+}
+
+
+input[type="text"], input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 200px;
+}
+

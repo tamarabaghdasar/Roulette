@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Roulette</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href="resources/css/extended.css" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/style.css">
+    <!--<link rel="stylesheet" href="resources/css/Site.css">-->
+
+    <link rel="stylesheet" href="resources/css/media.css">
+    <link rel="stylesheet" href="resources/css/style1.css">
+    <script src="resources/js/jquery-1.7.2.min.js"></script>
+    <script src="resources/js/progressAndRound.js"></script>
+    <script src="resources/js/jquery.signalR-0.5.0.min.js"></script>
+    <script src="resources/js/jquery.ba-throttle-debounce.js"></script>
+    <script src="resources/js/raphael.js"></script>
+    <script src="resources/js/jquery.form.min.js"></script>
+    <script src="resources/js/modernizr-1.7.min.js"></script>
+    <script src="resources/js/moment.js"></script>
+    <script src="resources/js/functions.js"></script>
+    <script src="resources/js/video.js"></script>
+    <script src="resources/js/jquery-ui-1.8.11.js"></script>
+    <script src="resources/js/highlighter.js"></script>
+    <script src="resources/js/stake.js"></script>
+    <script src="resources/js/json2.js"></script>
+
+    <script type="text/javascript" src="//player.wowza.com/player/latest/wowzaplayer.min.js"></script>
+
+    <script type="text/javascript" src="resources/js/roulette.js"></script>
+    <script type="text/javascript" src="resources/js/sldp-v2.11.3.min.js"></script>
+
+
+    <script type="text/javascript" src="http://roulette.beticus.com/signalr/hubs"></script>
+
+</head>
+<body>
+
+
+<div class="row videoBlock">
+    <div class="col-12">
+        <div class="videoContainer">
+            <div id="round-number" class="roundNumber"></div>
+            <div style="position: absolute; top: 10px; right: 10px; z-index: 9999;">
+                <div id="round-time">0</div>
+            </div>
+            <div id="playerElement" style="width: 100%; height: 800px;"></div>
+            <div class="fullScreenVideoBtn">Full Screen</div>
+
+            <div id="board-section-container">
+                <div id="board" class="bubble_board">
+
+                    <div class="row row1 board">
+                        <div class="col-zero reverse" id="zero">
+                            <div class="push-item">
+                                <div class="zero-zero round">0</div>
+                            </div>
+                        </div>
+                        <div class="col-board roulette-board">
+                            <div class="row">
+                                <div class="red number col col-lg" id="td3">
+                                    <div class="push-item" round="3">
+                                        <div class="round">3</div>
+                                    </div>
+                                </div>
+                                <div class="black number col col-lg" id="td6">
+                                    <div class="push-item" round="6">
+                                        <div class="round">6</div>
+                                    </div>
+                                </div>
+                                <div class="red number col col-lg" id="td9">
+                                    <div class="push-item" round="9">
+                                        <div class="round">9</div>
+                                    </div>
+                                </div>
+                                <div class="red number col col-lg" id="td12">
+                                    <div class="push-item" round="12">
+                                        <div class="round">12</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td15">
+                                    <div class="push-item" round="15">
+                                        <div class="round">15</div>
+                                    </div>
+                                </div>
+                                <div class="red number col col-lg" id="td18">
+                                    <div class="push-item" round="18">
+                                        <div class="round">18</div>
+                                    </div>
+                                </div>
+                                <div class="red number col col-lg" id="td21">
+                                    <div class="push-item" round="21">
+                                        <div class="round">21</div>
+                                    </div>
+                                </div>
+                                <div class="black number col col-lg" id="td24">
+                                    <div class="push-item" round="24">
+                                        <div class="round">24</div>
+                                    </div>
+                                </div>
+
+                                <div class="red number col col-lg" id="td27">
+                                    <div class="push-item" round="27">
+                                        <div class="round">27</div>
+                                    </div>
+                                </div>
+                                <div class="red number col col-lg" id="td30">
+                                    <div class="push-item" round="30">
+                                        <div class="round">30</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td33">
+                                    <div class="push-item" round="33">
+                                        <div class="round">33</div>
+                                    </div>
+                                </div>
+
+                                <div class="red number col col-lg" id="td36">
+                                    <div class="push-item" round="36">
+                                        <div class="round">36</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="black number col col-lg" id="td2">
+                                    <div class="push-item" round="2">
+                                        <div class="round">2</div>
+                                    </div>
+                                </div>
+
+                                <div class="red number col col-lg" id="td5">
+                                    <div class="push-item" round="5">
+                                        <div class="round">5</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td8">
+                                    <div class="push-item" round="8">
+                                        <div class="round">8</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td11">
+                                    <div class="push-item" round="11">
+                                        <div class="round">11</div>
+                                    </div>
+                                </div>
+
+                                <div class="red number col col-lg" id="td14">
+                                    <div class="push-item" round="14">
+                                        <div class="round">14</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td17">
+                                    <div class="push-item" round="17">
+                                        <div class="round">17</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td20">
+                                    <div class="push-item" round="20">
+                                        <div class="round">20</div>
+                                    </div>
+                                </div>
+
+                                <div class="red number col col-lg" id="td23">
+                                    <div class="push-item" round="23">
+                                        <div class="round">23</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td26">
+                                    <div class="push-item" round="26">
+                                        <div class="round">26</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td29">
+                                    <div class="push-item" round="29">
+                                        <div class="round">29</div>
+                                    </div>
+                                </div>
+
+                                <div class="red number col col-lg" id="td32">
+                                    <div class="push-item" round="32">
+                                        <div class="round">32</div>
+                                    </div>
+                                </div>
+
+
+                                <div class="black number col col-lg" id="td35">
+                                    <div class="push-item" round="35">
+                                        <div class="round">35</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="red number col col-lg" id="td1">
+                                    <div class="push-item" round="1">
+                                        <div class="round">1</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td4">
+                                    <div class="push-item" round="4">
+                                        <div class="round">4</div>
+                                    </div>
+                                </div>
+
+                                <div class="red number col col-lg" id="td7">
+                                    <div class="push-item" round="7">
+                                        <div class="round">7</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td10">
+                                    <div class="push-item" round="10">
+                                        <div class="round">10</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td13">
+                                    <div class="push-item" round="13">
+                                        <div class="round">13</div>
+                                    </div>
+                                </div>
+
+                                <div class="red number col col-lg" id="td16">
+                                    <div class="push-item" round="16">
+                                        <div class="round">16</div>
+                                    </div>
+                                </div>
+
+                                <div class="red number col col-lg" id="td19">
+                                    <div class="push-item" round="19">
+                                        <div class="round">19</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td22">
+                                    <div class="push-item" round="22">
+                                        <div class="round">22</div>
+                                    </div>
+                                </div>
+
+                                <div class="red number col col-lg" id="td25">
+                                    <div class="push-item" round="25">
+                                        <div class="round">25</div>
+                                    </div>
+                                </div>
+
+                                <div class="black number col col-lg" id="td28">
+                                    <div class="push-item" round="28">
+                                        <div class="round">28</div>
+                                    </div>
+                                </div>
+
+
+                                <div class="black number col col-lg" id="td31">
+                                    <div class="push-item" round="31">
+                                        <div class="round">31</div>
+                                    </div>
+                                </div>
+
+
+                                <div class="red number col col-lg" id="td34">
+                                    <div class="push-item" round="34">
+                                        <div class="round">34</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-inchvorban col-lg-1">
+                            <div class="row rowPorc">
+                                <div>
+                                    <div class="col-lg push-item">
+                                        <div class="row12">2to1</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row rowPorc">
+                                <div>
+                                    <div class="col-lg push-item">
+                                        <div class="row12">2to1</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row rowPorc">
+                                <div>
+                                    <div class="col-lg push-item">
+                                        <div class="row12">2to1</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-stavkeqi-tesakner">
+                        <div class="col-lg-12">
+                            <div class="row row-stner">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-4 col-xl-4 esim">
+                                    <div class="push-item" round="1st12">1st 12</div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-4 col-xl-4 esim">
+                                    <div class="push-item" round="2nd12">2nd 12</div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-4 col-xl-4 esim">
+                                    <div class="push-item" round="3rd12">3rd 12</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="row row-stner">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 esim">
+                                    <div class="push-item" round="1to18">1 to 18</div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 esim">
+                                    <div class="push-item" round="Even">EVEN</div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 img img1 esim">
+                                    <div class="push-item" round="imgB"></div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 img img2 esim">
+                                    <div class="push-item" round="imgR"></div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 esim">
+                                    <div class="push-item" round="Odd">Odd</div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-2 col-xl-2 esim">
+                                    <div class="push-item" round="19to36">19 to 36</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sectors" class="bubble_sectors">
+
+
+                    <script src="resources/js/raphael.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        if (!Array.prototype.indexOf) {
+                            Array.prototype.indexOf = function (elt /*, from*/) {
+                                var len = this.length;
+
+                                var from = Number(arguments[1]) || 0;
+                                from = (from < 0)
+                                    ? Math.ceil(from)
+                                    : Math.floor(from);
+                                if (from < 0)
+                                    from += len;
+
+                                for (; from < len; from++) {
+                                    if (from in this &&
+                                        this[from] === elt)
+                                        return from;
+                                }
+                                return -1;
+                            };
+                        }
+
+                        var cells = new Array();
+                        var enableEvents = false;
+                        $(function () {
+                            var paper = Raphael("sectors-container", 769, 152);
+
+                            var board = paper.rect(1, 1, 767, 150, 75);
+
+                            board.attr("fill", "url(/img/green-texture.jpg)");
+                            board.attr("stroke", "#FFE399");
+                            board.attr("stroke-width", "1");
+
+                            var pi = Math.PI;
+                            var cos = Math.cos;
+                            var sin = Math.sin;
+                            var r = 75;
+                            var rsmall = 20;
+                            var leftPaths = new Array();
+                            var cellsCurrentIndex = 35;
+
+                            var initialShapeX1 = 98;
+                            var shapeY1 = 1;
+                            var shapeWidth = 43;
+                            var shapeHeight = 55;
+                            var shapeX1;
+                            var shapeCX = initialShapeX1 - shapeWidth / 2;
+                            var shapeCY = shapeY1 + shapeHeight / 2;
+
+                            var redColor = "#DF1111";
+                            var blackColor = "#000000";
+                            var textAttr = {
+                                fill: "#FFF",
+                                "font-size": 24,
+                                cursor: "pointer",
+                                "font-family": "Andalus, 'Trebuchet MS', Verdana, Helvetica, sans-serif"
+                            };
+                            var shapeAttr = {stroke: "#FFE399", cursor: "pointer"};
+
+
+                            //////////////////////
+                            var initialAngle = pi / 8;
+                            var sectorsAngle = pi / 4;
+                            var x1 = 76 - rsmall * sin(initialAngle);
+                            var y1 = 56 + rsmall * (1 - cos(initialAngle));
+                            var x2 = 76 - r * sin(initialAngle);
+                            var y2 = 1 + r * (1 - cos(initialAngle));
+
+                            var tempPath = "M" + 98 + " " + 56 + "L" + (r + 1) + " 56" + "A" + rsmall + " " + rsmall + " 0 0 0 " + x1 + " " + y1 +
+                                "L" + x2 + " " + y2 + "A" + r + " " + r + " 0 0 1 " + (r + 1) + " 1L98 1Z";
+                            cells[cellsCurrentIndex] = paper.set(); // { shape: paper.path(tempPath).attr(shapeAttr) };
+                            cells[cellsCurrentIndex].push(
+                                paper.path(tempPath).attr(shapeAttr),
+                                paper.text(shapeCX, shapeCY, NUMBERS[cellsCurrentIndex]).attr(textAttr));
+
+
+                            for (var i = 1; i <= 3; i++) {
+                                var newX1 = 76 - rsmall * sin(initialAngle + (i * sectorsAngle));
+                                var newY1 = 56 + rsmall * (1 - cos(initialAngle + (i * sectorsAngle)));
+
+                                var newX2 = 76 - r * sin(initialAngle + (i * sectorsAngle));
+                                var newY2 = 1 + r * (1 - cos(initialAngle + (i * sectorsAngle)));
+
+                                var tempPath = "M" + x1 + " " + y1 + "A" + rsmall + " " + rsmall + " 0 0 0 " + newX1 + " " + newY1 +
+                                    "L" + newX2 + " " + newY2 + "A" + r + " " + r + " 0 0 1 " + x2 + " " + y2 + "Z";
+
+                                x1 = newX1;
+                                y1 = newY1;
+                                x2 = newX2;
+                                y2 = newY2;
+
+                                cellsCurrentIndex = (cellsCurrentIndex + 1) % 37;
+
+                                //cells[cellsCurrentIndex] = { shape: paper.path(tempPath).attr(shapeAttr) };
+                                cells[cellsCurrentIndex] = paper.set();
+                                cells[cellsCurrentIndex].push(
+                                    paper.path(tempPath).attr(shapeAttr),
+                                    paper.text(76 - 47.5 * sin(i * sectorsAngle), shapeCY + 47.5 * (1 - cos(i * sectorsAngle)), NUMBERS[cellsCurrentIndex]).attr(textAttr));
+
+                                //paper.text(76 - 47.5 * sin(i * sectorsAngle), shapeCY + 47.5 * (1 - cos(i * sectorsAngle)), NUMBERS[cellsCurrentIndex]).attr(textAttr);
+                            }
+
+                            var tempPath = "M" + 98 + " " + 96 + "L" + (r + 1) + " 96" + "A" + rsmall + " " + rsmall + " 0 0 1 " + x1 + " " + y1 +
+                                "L" + x2 + " " + y2 + "A" + r + " " + r + " 0 0 0 " + (r + 1) + " 151L98 151Z";
+                            //cells[++cellsCurrentIndex] = { shape: paper.path(tempPath).attr(shapeAttr) }
+                            //paper.text(76 - 47.5 * sin(4 * sectorsAngle), shapeCY + 47.5 * (1 - cos(4 * sectorsAngle)), NUMBERS[cellsCurrentIndex]).attr(textAttr);
+
+                            cells[++cellsCurrentIndex] = paper.set();
+                            cells[cellsCurrentIndex].push(
+                                paper.path(tempPath).attr(shapeAttr),
+                                paper.text(76 - 47.5 * sin(4 * sectorsAngle), shapeCY + 47.5 * (1 - cos(4 * sectorsAngle)), NUMBERS[cellsCurrentIndex]).attr(textAttr));
+
+                            /////////////////////////////////
+
+                            shapeY1 = 96;
+                            for (var i = 0; i <= 12; i++) {
+                                shapeX1 = initialShapeX1 + i * shapeWidth;
+                                //cells[++cellsCurrentIndex] = { shape: paper.rect(shapeX1, shapeY1, shapeWidth, shapeHeight).attr(shapeAttr) }
+
+                                cells[++cellsCurrentIndex] = paper.set();
+                                cells[cellsCurrentIndex].push(
+                                    paper.rect(shapeX1, shapeY1, shapeWidth, shapeHeight).attr(shapeAttr),
+                                    paper.text(shapeX1 + shapeWidth / 2, shapeY1 + shapeHeight / 2, NUMBERS[cellsCurrentIndex]).attr(textAttr));
+
+
+                                //paper.text(shapeX1 + shapeWidth / 2, shapeY1 + shapeHeight / 2, NUMBERS[cellsCurrentIndex]).attr(textAttr);
+                            }
+
+                            cellsCurrentIndex = 35;
+                            shapeY1 = 1;
+                            for (var i = 0; i <= 12; i++) {
+                                shapeX1 = initialShapeX1 + i * shapeWidth;
+                                //cells[++cellsCurrentIndex] = { shape: paper.rect(shapeX1, shapeY1, shapeWidth, shapeHeight).attr(shapeAttr).attr("fill", ((i % 2 == 0) ? blackColor : redColor)) }
+                                //cells[--cellsCurrentIndex] = { shape: paper.rect(shapeX1, shapeY1, shapeWidth, shapeHeight).attr(shapeAttr) }
+
+
+                                cells[--cellsCurrentIndex] = paper.set();
+                                cells[cellsCurrentIndex].push(
+                                    paper.rect(shapeX1, shapeY1, shapeWidth, shapeHeight).attr(shapeAttr),
+                                    paper.text(shapeX1 + shapeWidth / 2, shapeY1 + shapeHeight / 2, NUMBERS[cellsCurrentIndex]).attr(textAttr));
+
+                                //paper.text(shapeX1 + shapeWidth / 2, shapeY1 + shapeHeight / 2, NUMBERS[cellsCurrentIndex]).attr(textAttr);
+                            }
+
+                            ///////////////////////////////////
+                            //////////////////////
+                            var initialAngle = pi / 18;
+                            var sectorsAngle = 40 * pi / 180;
+                            var x1 = 692 + rsmall * sin(initialAngle);
+                            var y1 = 56 + rsmall * (1 - cos(initialAngle));
+                            var x2 = 692 + r * sin(initialAngle);
+                            var y2 = 1 + r * (1 - cos(initialAngle));
+
+                            var shapeCX = (98 + 43 * 13) + shapeWidth / 2;
+                            var shapeCY = shapeY1 + shapeHeight / 2;
+
+
+                            var tempPath = "M" + (98 + 43 * 13) + " " + 56 + "L692 56A" + rsmall + " " + rsmall + " 0 0 1 " + x1 + " " + y1 +
+                                "L" + x2 + " " + y2 + "A" + r + " " + r + " 0 0 0 " + 692 + " 1L" + (98 + 43 * 13) + " 1Z";
+                            //cells[--cellsCurrentIndex] = { shape: paper.path(tempPath).attr(shapeAttr) }
+                            //paper.text(shapeCX, shapeCY, NUMBERS[cellsCurrentIndex]).attr(textAttr);
+
+                            cells[--cellsCurrentIndex] = paper.set();
+                            cells[cellsCurrentIndex].push(
+                                paper.path(tempPath).attr(shapeAttr),
+                                paper.text(shapeCX, shapeCY, NUMBERS[cellsCurrentIndex]).attr(textAttr));
+
+
+                            for (var i = 1; i <= 4; i++) {
+                                var newX1 = 692 + rsmall * sin(initialAngle + (i * sectorsAngle));
+                                var newY1 = 56 + rsmall * (1 - cos(initialAngle + (i * sectorsAngle)));
+
+                                var newX2 = 692 + r * sin(initialAngle + (i * sectorsAngle));
+                                var newY2 = 1 + r * (1 - cos(initialAngle + (i * sectorsAngle)));
+
+                                var tempPath = "M" + x1 + " " + y1 + "A" + rsmall + " " + rsmall + " 0 0 1 " + newX1 + " " + newY1 +
+                                    "L" + newX2 + " " + newY2 + "A" + r + " " + r + " 0 0 0 " + x2 + " " + y2 + "Z";
+
+                                x1 = newX1;
+                                y1 = newY1;
+                                x2 = newX2;
+                                y2 = newY2;
+                                //cells[--cellsCurrentIndex] = { shape: paper.path(tempPath).attr(shapeAttr) }
+
+                                if (i > 1) {
+                                    var anglee = i * sectorsAngle + initialAngle - sectorsAngle / 2;
+                                } else {
+                                    var anglee = (i * sectorsAngle / 2 + initialAngle);
+                                }
+                                //paper.text(692 + 47.5 * sin(anglee), shapeCY + 47.5 * (1 - cos(anglee)), NUMBERS[cellsCurrentIndex]).attr(textAttr);
+
+
+                                cells[--cellsCurrentIndex] = paper.set();
+                                cells[cellsCurrentIndex].push(
+                                    paper.path(tempPath).attr(shapeAttr),
+                                    paper.text(692 + 47.5 * sin(anglee), shapeCY + 47.5 * (1 - cos(anglee)), NUMBERS[cellsCurrentIndex]).attr(textAttr));
+
+                            }
+
+                            var tempPath = "M" + (98 + 43 * 13) + " " + 96 + "L692 96A" + rsmall + " " + rsmall + " 0 0 0 " + x1 + " " + y1 +
+                                "L" + x2 + " " + y2 + "A" + r + " " + r + " 0 0 1 " + 692 + " 151L" + (98 + 43 * 13) + " 151Z";
+                            //cells[--cellsCurrentIndex] = { shape: paper.path(tempPath).attr(shapeAttr) }
+
+                            var shapeCX = (98 + 43 * 13) + shapeWidth / 2;
+                            var shapeCY = 96 + shapeHeight / 2;
+                            //            paper.text(shapeCX, shapeCY, NUMBERS[cellsCurrentIndex]).attr(textAttr).click(function () {
+                            //                $(cells[cellsCurrentIndex].shape).click();
+                            //            })
+
+                            cells[--cellsCurrentIndex] = paper.set();
+                            cells[cellsCurrentIndex].push(
+                                paper.path(tempPath).attr(shapeAttr),
+                                paper.text(shapeCX, shapeCY, NUMBERS[cellsCurrentIndex]).attr(textAttr));
+
+
+                            for (var i = 0; i < cells.length; i++) {
+                                if (cells[i]) {
+                                    if (NUMBERS[i] != 0) {
+                                        cells[i][0].attr("fill", ((i % 2 == 0) ? blackColor : redColor));
+                                    } else {
+                                        cells[i][0].attr("fill", "url(/img/green-texture.jpg)");
+                                    }
+
+                                    cells[i].data("index", i);
+
+                                    if (enableEvents) {
+                                        cells[i].mouseover(function () {
+                                            HighlightNeighbors(this);
+                                        }).click(function () {
+                                            BetNeighbors(this);
+                                        });
+                                    }
+                                }
+                            }
+
+
+                            /// Jeu Zero
+                            var cell15 = cells[NUMBERS.indexOf(15)][0].getBBox(true);
+                            var tempPath = "M" + cell15.x2 + " " + cell15.y2 + "L" + (r + 1) + " " + cell15.y2 + "A" + rsmall + " " + rsmall + " 0 0 0 " + (r + 1) + " " + (cell15.y2 + 2 * rsmall) +
+                                "L" + cell15.x2 + " " + (cell15.y2 + 2 * rsmall) + "Z";
+
+                            var sectorBox = paper.path(tempPath).attr(shapeAttr).attr("fill", "rgba(128,128,128,0.8)");
+                            var sectorText = paper.text(sectorBox.getBBox(true).x + sectorBox.getBBox(true).width / 2, sectorBox.getBBox(true).y + sectorBox.getBBox(true).height / 2, "Jeu 0").attr(textAttr);
+
+                            if (enableEvents) {
+                                paper.set().push(sectorBox, sectorText).click(function () {
+                                    BetJeuZero();
+                                }).mouseover(function () {
+                                    HighlightJeuZero();
+                                });
+                            }
+
+
+                            // Voisins du Zero
+                            var cell25 = cells[NUMBERS.indexOf(25)][0].getBBox(true);
+                            var tempPath = "M" + cell15.x2 + " " + cell15.y2 + "L" + cell25.x2 + " " + cell25.y2 + "L" + cell25.x2 + " " + (cell25.y2 + 2 * rsmall) +
+                                "L" + cell15.x2 + " " + (cell15.y2 + 2 * rsmall) + "Z";
+
+                            sectorBox = paper.path(tempPath).attr(shapeAttr).attr("fill", "rgba(128,128,128,0.8)");
+                            var voisins = sectorBox.getBBox(true);
+                            sectorText = paper.text(voisins.x + voisins.width / 2, voisins.y + voisins.height / 2, "Voisins").attr(textAttr);
+
+                            if (enableEvents) {
+                                paper.set().push(sectorBox, sectorText).click(function () {
+                                    BetVoisinsduZero();
+                                }).mouseover(function () {
+                                    HighlightVoisinsduZero();
+                                });
+                            }
+
+
+                            // Orphelins
+                            var cell6 = cells[NUMBERS.indexOf(6)][0].getBBox(true);
+                            var cell1 = cells[NUMBERS.indexOf(1)][0].getBBox(true);
+                            var tempPath = "M" + cell25.x2 + " " + cell25.y2 + "L" + cell6.x2 + " " + cell6.y2 + "L" + cell1.x2 + " " + cell1.y +
+                                "L" + cell25.x2 + " " + (cell25.y2 + 2 * rsmall) + "Z";
+
+                            sectorBox = paper.path(tempPath).attr(shapeAttr).attr("fill", "rgba(128,128,128,0.8)");
+                            var orphelins = sectorBox.getBBox(true);
+                            sectorText = paper.text(orphelins.x - 21.5 + orphelins.width / 2, orphelins.y + orphelins.height / 2, "Orphelins").attr(textAttr);
+
+
+                            if (enableEvents) {
+                                paper.set().push(sectorBox, sectorText).click(function () {
+                                    BetOrphelins();
+                                }).mouseover(function () {
+                                    HighlightOrphelins();
+                                });
+                            }
+
+                            // Tiers du Cylindre
+                            var cell6 = cells[NUMBERS.indexOf(6)][0].getBBox(true);
+                            var cell1 = cells[NUMBERS.indexOf(1)][0].getBBox(true);
+                            var tempPath = "M" + cell6.x2 + " " + cell6.y2 + "L692 56A" + rsmall + " " + rsmall + " 0 0 1 " + 692 + " " + (56 + 2 * rsmall) +
+                                "L" + cell1.x2 + " " + cell1.y + "Z";
+
+                            sectorBox = paper.path(tempPath).attr(shapeAttr).attr("fill", "rgba(128,128,128,0.8)");
+                            var tiers = sectorBox.getBBox(true);
+                            sectorText = paper.text(tiers.x + 21.5 + tiers.width / 2, tiers.y + tiers.height / 2, "Tiers").attr(textAttr);
+
+
+                            if (enableEvents) {
+                                paper.set().push(sectorBox, sectorText).click(function () {
+                                    BetTiersduCylindre();
+                                }).mouseover(function () {
+                                    HighlightTiersduCylindre();
+                                });
+                            }
+                        });
+                    </script>
+
+                    <div id="sectors-container"></div>
+                    <h1></h1>
+                </div>
+            </div>
+            <div id="history" style="opacity: 0.2;">
+                <table class="history-board" cellspacing="0">
+                    <tbody><tr>
+                        <td>39622</td>
+
+                        <td class="black number"><div class="push-item"><div class="history-round">17</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39621</td>
+
+                        <td class="red number"><div class="push-item"><div class="history-round">25</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39620</td>
+
+                        <td class="black number"><div class="push-item"><div class="history-round">13</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39619</td>
+
+                        <td class="black number"><div class="push-item"><div class="history-round">20</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39618</td>
+
+                        <td class="black number"><div class="push-item"><div class="history-round">35</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39617</td>
+
+                        <td class="red number"><div class="push-item"><div class="history-round">30</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39616</td>
+
+                        <td class="black number"><div class="push-item"><div class="history-round">24</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39615</td>
+
+                        <td class="black number"><div class="push-item"><div class="history-round">4</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39614</td>
+
+                        <td class="red number"><div class="push-item"><div class="history-round">19</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39613</td>
+
+                        <td class="red number"><div class="push-item"><div class="history-round">3</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39612</td>
+
+                        <td class="red number"><div class="push-item"><div class="history-round">34</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39611</td>
+
+                        <td class="black number"><div class="push-item"><div class="history-round">33</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39610</td>
+
+                        <td class="red number"><div class="push-item"><div class="history-round">5</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39609</td>
+
+                        <td class="black number"><div class="push-item"><div class="history-round">35</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39608</td>
+
+                        <td class="black number"><div class="push-item"><div class="history-round">11</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39607</td>
+
+                        <td class="black number"><div class="push-item"><div class="history-round">28</div></div></td>
+                    </tr>
+                    <tr>
+                        <td>39606</td>
+
+                        <td class="red number"><div class="push-item"><div class="history-round">30</div></div></td>
+                    </tr>
+                    </tbody></table></div>
+
+
+
+            <!--<div id="history">-->
+
+                <!--<table class="history-board" cellspacing="0">-->
+                <!--</table>-->
+            <!--</div>-->
+            <div id="winNumberBlock" style="display:none">
+                <div class="screenCenter">
+                    <h1>ВЫИГРЫШНЫЙ НОМЕР</h1>
+                    <h2 id="winNum" class="winNum">0</h2>
+                </div>
+            </div>
+        </div>
+        <div id="player"></div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+    /*function Start() {
+     $.ajax({
+     type: "POST",
+     url: '/Stake/NextNumber',
+     datatype: 'json',
+     success: function (json) {
+     if (json.nextNumber === null) {
+     Start();
+     } else {
+     $('#winNum').html(json.nextNumber);
+     $('#winNumberBlock').fadeIn('slow',
+     function () {
+     setTimeout(function () { $('#winNumberBlock').fadeOut('slow') }, 6000);
+     });
+     }
+     }
+     });
+     }*/
+
+
+    //////
+
+    var curRound = null;
+    $(document).ready(function () {
+        StartVideo();
+
+        $('.page').css({backgroundColor: '#444'});
+
+        /*var questions = $.connection.questionsHub;
+        questions.newQuestion = function (data) {
+            if (data.length > 50) {
+                drawStakes(data);
+            }
+        };*/
+
+        $(function () {
+            /*$.connection.hub.start();
+
+            getRoundNumber();
+            setProgressBar();
+
+            setInterval(function () {
+                    getRoundNumber();
+                    if (currentRoundNumber.length > 50) {
+                        location.reload();
+                    }
+                    if (curRound != currentRoundNumber) {
+                        curRound = currentRoundNumber;
+                    }
+                },
+                1000
+            );*/
+
+            main();
+
+
+            /*function doSomething() {
+             var winW = 1600;
+             if (document.body && document.body.offsetWidth) {
+             winW = document.body.offsetWidth;
+             }
+             if (document.compatMode == 'CSS1Compat' &&
+             document.documentElement &&
+             document.documentElement.offsetWidth) {
+             winW = document.documentElement.offsetWidth;
+             }
+             if (window.innerWidth && window.innerHeight) {
+             winW = window.innerWidth;
+             }
+
+             if (winW > 1860) {
+             $("#roulette").addClass("big-wheel");
+             $("#board-section-container").addClass("big-board");
+             } else {
+             $("#roulette").removeClass("big-wheel");
+             $("#board-section-container").removeClass("big-board");
+             }
+             };
+
+             var resizeTimer;
+             $(window).resize(function () {
+             clearTimeout(resizeTimer);
+             resizeTimer = setTimeout(doSomething, 100);
+             });
+
+             doSomething();*/
+        });
+
+        $('.fullScreenVideoBtn').click(function () {
+            toggleFullScreen();
+        });
+
+        window.onload = function () {
+            toggleFullScreen();
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

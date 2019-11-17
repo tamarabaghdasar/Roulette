@@ -1,0 +1,763 @@
+@media (max-width: 576px) {
+    .board-container {
+        width: 463px;
+    }
+    .col-zero {
+        font-size: 17px;
+        width: 50px;
+        height: 124px;
+        line-height: 3;
+    }
+    .zero-zero {
+        line-height: 135px;
+    }
+.col-zero .push-item .round {
+    margin-left: -14px;
+}
+
+    .col-board > .row > div {
+        width: 31px;
+        height: 41px;
+        border: 1px solid #ffe399;
+    }
+
+    .col-inchvorban .row > div {
+        height: 41px;
+        width: 33px;
+    }
+
+    .col-inchvorban {
+        width: 55px;
+    }
+    .img{
+        background-size: 40px;
+    }
+
+
+    .row-stavkeqi-tesakner div {
+        height: 40px;
+        line-height: 40px;
+    }
+
+
+    .row-stavkeqi-tesakner {
+        width: 385.4px;
+        margin-left: 35px;
+        font-size: 8px;
+        margin: -2px 35px;
+    }
+
+    .col-inchvorban {
+        font-size: 10px;
+    }
+    .buttons .hamburger-btn {
+        right: 0;
+        display: block;
+        position: absolute;
+    }
+    .buttons1 .hamburger-btn1 {
+        left: 0;
+        display: block;
+        position: absolute;
+    }
+
+
+    .round-number {
+        height: 53px;
+        line-height: 33px;
+        font-size: 26px;
+        width: 90px;
+        height: 35px;
+
+    }
+    .hamburger-btn {
+        width: 52%;
+        height: 27px;
+    }
+
+    .buttons1 .hamburger-btn1 {
+        width:6%;
+        margin: -2px 14px;
+    }
+    .balance-login a {
+        font-size: 14px!important;
+    }
+    .sum {
+        font-size: 15px;
+    }
+
+    .col-board {
+        font-size: 12px;
+        line-height: 50px;
+    }
+
+    .onboard img {
+        width: 24px !important;
+        height: 22px !important;
+    }
+
+    .col-board .onboard .text {
+        font-size: 9px !important;
+        margin: -15px -20px !important;
+    }
+
+    .row-stavkeqi-tesakner .onboard .text {
+        font-size: 9px !important;
+        margin: -16px -21px!important;
+    }
+    .col-inchvorban .onboard .text {
+        font-size: 9px !important;
+        margin: -16px -19px!important;
+    }
+
+    .push-item .round {
+        margin: -3px -7px;
+    }
+    .col-zero .onboard .text {
+        margin: -14px -23px;
+        font-size: 9px !important;
+    }
+    .col-inchvorban img {
+        margin-bottom: 39px;
+        margin-left: -4px;
+    }
+
+
+    .number div.chip, .number div.chip img {
+         width: 15px;
+         height: 15px;
+     }
+
+    .col-zero div.chip, .col-zero div.chip img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .rowPorc div.chip, .rowPorc div.chip img {
+        width: 15px;
+        height: 15px;
+    }
+    .rowPorc div text  {
+        width: 15px;
+        height: 15px;
+    }
+
+    .col-zero .onboard img {
+        margin-left: -3px;
+    }
+
+    .rowPorc .push-item {
+        padding: 0 0;
+    }
+    .push-item .row12{
+        line-height: 39px;
+    }
+    .col-board img{
+        margin-left: -5px;
+    }
+    .row-stavkeqi-tesakner img{
+        margin: 6px 0px;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 178px;
+    }
+
+}
+
+@media (min-width: 576px) {
+    .board-container {
+        width: 542px;
+    }
+
+    .col-zero {
+        font-size: 21px;
+        width: 72px;
+        height: 177px;
+        line-height: 3;
+    }
+    .col-board > .row > div {
+        width: 36px;
+        height: 59px;
+    }
+
+    .col-board {
+        font-size: 13px;
+        line-height: 66px;
+    }
+
+    .col-inchvorban .row > div {
+        height: 59px;
+        width: 43px;
+    }
+    .col-inchvorban {
+        font-size: 15px;
+        width: 64px;
+    }
+
+    .row-stavkeqi-tesakner div {
+        height: 51px;
+        line-height: 51px;
+    }
+
+
+    .zero-zero {
+        line-height: 9em;
+    }
+    .round-number {
+        width: 105px;
+        height: 42px;
+        font-size: 27px;
+        line-height: 42px;
+    }
+    .hamburger-btn {
+        width: 49%;
+        height: 27px;
+    }
+    .buttons1 .hamburger-btn1 {
+        width:5%;
+        margin: 0px 14px;
+    }
+    .buttons1 .hamburger-btn1 {
+        left: 0;
+        display: block;
+        position: absolute;
+    }
+    .balance-login a {
+        font-size: large;
+    }
+
+    .row-stavkeqi-tesakner {
+        width: 433px;
+        margin-left: 57px;
+        font-size: 10px;
+        margin: -1px 57px;
+    }
+
+    .row-stavkeqi-tesakner img {
+        margin-top: 4px;
+        margin-left: 17px;
+    }
+    .img{
+        background-size: 42px;
+    }
+
+    .onboard img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .col-board .onboard .text {
+        font-size: 9px!important;
+        margin: -11px 0px!important;
+    }
+
+
+    .row-stavkeqi-tesakner .onboard .text {
+        margin: -15px 0px!important;
+        font-size: 9px !important;
+    }
+    .col-inchvorban .onboard .text {
+        margin: 22px 0px!important;
+        font-size: 9px !important;
+    }
+
+    .push-item .round {
+        margin: -1px -5px;
+    }
+    .col-zero .onboard .text {
+        margin: -10px -2px;
+        font-size: 9px !important;
+    }
+    .rowPorc .row12{
+        margin: -34px -9px;
+    }
+
+    .col-zero .round {
+        margin: 0 0;
+        line-height: 177px;
+    }
+    .col-inchvorban img {
+        margin: 0px 17px;
+    }
+
+    .col-board img{
+        margin: 0px 17px;
+    }
+    }
+
+
+    .number div.chip, .number div.chip img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .col-zero div.chip, .col-zero div.chip img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .rowPorc div.chip, .rowPorc div.chip img {
+        width: 30px;
+        height: 30px;
+    }
+    .rowPorc div text  {
+        width: 30px;
+        height: 30px;
+    }
+    .col-zero img {
+        margin: 1px 15px;
+    }
+
+@media (min-width: 768px) {
+    .board-container {
+        width: 739px;
+    }
+
+    .col-board > .row > div {
+        width: 50px;
+        height: 72px;
+        font-size: 23px;
+    }
+
+    .col-zero {
+        font-size: 31px;
+        height: 216px;
+        width: 88px;
+        line-height: 67px;
+    }
+
+
+    .col-inchvorban {
+        font-size: 19px;
+        line-height: 5.7;
+    }
+    .col-inchvorban .row > div {
+        height: 79px;
+        width: 57px;
+    }
+
+    .rowPorc .push-item{
+        margin: 8px -6px;
+    }
+
+
+       .zero-zero {
+        height: 267px;
+        line-height: 231px;
+    }
+
+    .row-stavkeqi-tesakner {
+        width: 600.8px;
+        margin-left: 73px;
+        font-size: 17px;
+        line-height: 40px;
+    }
+
+    .row-stavkeqi-tesakner div {
+        height: 59px;
+        line-height: 59px;
+    }
+    .row-stavkeqi-tesakner img{
+        margin-top: 15px;
+        margin-left: -5px;
+    }
+        .img {
+        background-size: 50px;
+    }
+    .round-number {
+        width: 122px;
+        height: 48px;
+        font-size: 30px;
+    }
+    .hamburger-btn {
+        width: 49%;
+        height: 38px;
+    }
+    .buttons1 .hamburger-btn1 {
+        width: 5%;
+        margin: -5px 13px;
+    }
+
+
+    .balance-login a {
+        font-size: large;
+    }
+    .onboard img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .col-board .onboard .text {
+        font-size: 9px!important;
+        margin: -7px 0px!important;
+    }
+    .onboard img {
+        width: 54px;
+        height: 52px;
+    }
+
+    .col-inchvorban .onboard .text {
+        margin: 19px 3px!important;
+        font-size: 9px !important;
+    }
+
+    .col-zero .onboard .text {
+        margin: -2px 0px;
+        font-size: 9px !important;
+    }
+
+    .rowPorc .row12 {
+        margin: -29px -3px;
+        font-size: 20px;
+    }
+    .push-item .round {
+        margin: -2px -5px;
+    }
+    .col-zero .round {
+        margin: 0 0;
+        height: 237px;
+        line-height: 217px;
+    }
+    .row-stavkeqi-tesakner .onboard .text {
+        margin: -3px -2px!important;
+        font-size: 9px !important;
+    }
+    .col-inchvorban img {
+        margin: -6px 20px;
+    }
+    .row-stavkeqi-tesakner img{
+        margin: -9px 15px;
+    }
+    .col-zero img {
+        margin: -2px 17px;
+    }
+
+    .col-board img {
+        margin: -3px 15px;
+    }
+    .col-board {
+        font-size: 13px;
+        line-height: 70px;
+    }
+    .col-board .onboard .text {
+        font-size: 9px!important;
+        margin: -2px -2px!important;
+    }
+    .col-inchvorban .row > div {
+        height: 72px;
+        width: 57px;
+    }
+}
+
+@media (min-width: 992px) {
+    .board-container {
+        width: 953px;
+        border: 2ps solid pink;
+    }
+
+    .col-board > .row > div {
+        width: 66px;
+        height: 85px;
+        line-height: 95px;
+        line-height: 95px;
+    }
+    .zero-zero {
+        line-height: 270px;
+    }
+    .col-inchvorban .row > div {
+        height: 85px;
+        font-size: 26px;
+        width: 69px;
+    }
+
+    .col-inchvorban {
+        font-size: 19px;
+        line-height: 5;
+    }
+    .col-inchvorban img {
+        margin: 0 12px;
+    }
+
+    .col-zero {
+        font-size: 32px;
+        width: 104px;
+        height: 256px;
+        line-height: 2.9;
+    }
+
+    .col-board {
+        font-size: 30px;
+        line-height: 104px;
+    }
+
+    .balance-login a {
+        font-size: large;
+    }
+    .row-stavkeqi-tesakner {
+        width: 793.5px;
+        margin-left: 90px;
+        font-size: 21px;
+        line-height: 40px;
+        margin: -1px 89px;
+    }
+
+    .row-stavkeqi-tesakner div {
+        height: 77px;
+        line-height: 77px;
+    }
+
+    .img {
+        background-size: 76px;
+    }
+
+    .onboard img {
+        width: 47px!important;
+        height: 46px!important;
+    }
+
+
+    .col-board .onboard .text {
+        margin: 0px -2px!important;
+        font-size: 12px !important;
+    }
+
+
+    .row-stavkeqi-tesakner .onboard .text {
+        margin: -1px -2px!important;
+        font-size: 12px !important;
+    }
+
+    .row-stavkeqi-tesakner img {
+        margin-top: 9px;
+        margin-left: 7px;
+    }
+    .push-item .round {
+        margin: -6px auto;
+    }
+
+    .col-inchvorban .onboard .text {
+        margin: 18px 4px!important;
+        font-size: 12px !important;
+    }
+
+    .col-zero .onboard .text {
+        margin: 1px 0px;
+        font-size: 12px !important;
+    }
+    .col-zero .round {
+        margin: 0 0;
+        line-height: 255px;
+    }
+    .rowPorc .row12 {
+        margin: -28px -4px;
+        font-size: 25px;
+    }
+    .col-zero img {
+        margin: 1px 9px;
+    }
+
+    .col-board img {
+        margin: 10px 7px;
+    }
+    .col-inchvorban img{
+        margin-left: 13px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .buttons .btn-block {
+        border: 1px solid grey;
+    }
+    .buttons .btn-secondary {
+        width: 100%;
+        text-align: left;
+        background-color: transparent !important;
+        border: none;
+        color: black !important;
+    }
+
+
+    .buttons1 .btn-block1 {
+        border: 1px solid grey;
+    }
+    .buttons1 .div {
+        width: 100%;
+        text-align: left;
+        background-color: transparent !important;
+        border: none;
+        color: black !important;
+    }
+
+
+
+    .buttons .hamburger-btn {display: block;z-index: 3;}
+    .buttons1 .hamburger-btn1 {display: block;z-index: 3;}
+    .buttons > .btn-block {
+        top: 59px;
+        width: 241px;
+        display: none;
+        position: absolute;
+        z-index: 2;
+        background-color: whitesmoke;
+        right: 0;
+    }
+
+
+
+    .buttons .hamburger-btn {
+        right: 0;
+        display: block;
+        position: absolute;
+    }
+
+
+    .buttons1 > .btn-block1 {
+        top: 59px;
+        width: 241px;
+        display: none;
+        position: absolute;
+        z-index: 2;
+        background-color: whitesmoke;
+        left: 0;
+        color:black;
+    }
+
+
+
+    .buttons1 .hamburger-btn1 {
+        left: 0;
+        display: block;
+        position: absolute;
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+    .board-container {
+        width: 1166px;
+    }
+
+
+    .col-board > .row > div {
+        width: 83px;
+        height: 124px;
+        font-size: 37px;
+    }
+
+
+    .col-inchvorban .row > div {
+        height: 124px;
+        width: 91px;
+    }
+
+    .col-zero {
+        margin-left: -41px;
+        font-size: 50px!important;
+        width: 156px;
+        height: 373px;
+        line-height: 1.9;
+    }
+
+    .row-stavkeqi-tesakner {
+        width: 997px;
+        margin-left: 75px;
+        font-size: 32px;
+        margin: -1px 75.1px;
+    }
+    .row-stavkeqi-tesakner div {
+        height: 84px;
+        line-height: 51px;
+    }
+    .col-board {
+        font-size: 50px;
+        line-height: 129px;
+        margin: 0 -25px;
+    }
+
+    .col-inchvorban {
+        font-size: 39px;
+        line-height: 126px;
+        margin: 0 25px;
+        margin-right: 0;
+    }
+
+
+    .balance-login a {
+        font-size: large;
+    }
+
+    .buttons .hamburger-btn {display: none;}
+    .buttons > .btn-block {display: block;}
+    .buttons1 .hamburger-btn1 {display: none;}
+    .buttons1 > .btn-block1 {display: block;}
+
+    .row-stner div {
+        height: 85px;
+        line-height: 75px;
+    }
+    .buttons > .dasavorel{
+        display: flex;
+    }
+
+    .buttons1 > .dasavorel1{
+        display: flex;
+    }
+
+    .img {
+        background-size: 126px;
+    }
+    .onboard img {
+        width: 65px!important;
+        height: 65px!important;
+    }
+    .col-board .onboard .text {
+        margin: 0px -3px!important;
+        font-size: 12px !important;
+    }
+
+    .row-stavkeqi-tesakner .onboard .text {
+        margin: -4px -2px!important;
+        font-size: 12px !important;
+    }
+    .col-inchvorban .onboard .text {
+        margin: 5px 4px!important;
+        font-size: 12px !important;
+    }
+
+    .push-item .round {
+        margin: 15px auto;
+    }
+
+    .col-inchvorban .onboard .text {
+        margin: 2px 3px!important;
+        font-size: 12px !important;
+    }
+    .rowPorc .row12 {
+        margin: -24px -5px;
+    }
+    .col-zero .round {
+        margin-left: -25px;
+        margin-top: 62px;
+    }
+    .rowPorc .row12 {
+        margin: -12px -4px;
+        font-size: 36px;
+    }
+    .col-inchvorban img {
+        margin: 4px 3px;
+    }
+    .row-stavkeqi-tesakner img {
+        margin-top: -2px;
+        margin-left: -2px;
+    }
+    .col-board img {
+        margin: 0px -2px;
+    }
+    .col-zero img {
+        margin: 0 -9px;
+    }
+    .col-zero .onboard .text {
+        margin: 0px -9px;
+        font-size: 12px !important;
+    }
+}
